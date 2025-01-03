@@ -8,7 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-.output
 stats.html
 stats-*.json
 .wxt
@@ -27,3 +26,4 @@ web-ext.config.ts
 
 .env
 package-lock.json
+.output

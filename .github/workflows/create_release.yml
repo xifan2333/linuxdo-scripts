@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '22'
 
     - name: Install dependencies
       run: npm install
@@ -47,13 +47,15 @@ jobs:
         CURRENT_DATE=$(TZ='Asia/Shanghai' date +'%Y-%m-%d  %H:%M')
         sed -i "s/\$PACKAGE_VERSION/$PACKAGE_VERSION/g" CHANGELOG.md
         sed -i "s/\$CURRENT_DATE/$CURRENT_DATE/g" CHANGELOG.md
-        gh release create "$PACKAGE_VERSION" linuxdo-scripts.user.js \
+        gh release create "$PACKAGE_VERSION" \
         -t "$PACKAGE_VERSION" \
         -n "$(cat CHANGELOG.md)
 
         ---
-        
-        [查看 $PACKAGE_VERSION 更新日志](https://github.com/dlzmoe/linuxdo-scripts/blob/main/version-log.md)  [点击前往 greasyfork.org 进行安装](https://greasyfork.org/scripts/501827)
+
+        使用方法:  
+        - Chrome、Edge、Arc 用户请在 [Chrome 商店中安装](https://chromewebstore.google.com/detail/fbgblmjbeebanackldpbmpacppflgmlj)
+        - Firefox 用户请在 [Firefox 商店中安装](https://addons.mozilla.org/zh-CN/firefox/addon/linux_do-scripts/)
 
         发布于：$CURRENT_DATE"
       env:

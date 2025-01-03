@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.flex {
+  position: relative;
+  padding-left: 320px;
+
+  .aside {
+    width: 300px;
+    background: #eee;
+    height: 100vh;
+    overflow-y: auto;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    ul {
+      list-style: none;
+      padding: 20px 20px 0;
+      width: 100%;
+
+      li {
+        padding: 8px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-bottom: 6px;
+        transition: all 0.1s linear;
+
+        &:hover {
+          background: #fff;
+        }
+
+        &.selected {
+          background: #fff;
+        }
+      }
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 20px;
+    }
+  }
+
+  .container {
+    position: relative;
+    overflow-y: auto;
+  }
+}

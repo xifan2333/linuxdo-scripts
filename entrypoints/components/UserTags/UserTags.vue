@@ -109,9 +109,9 @@ export default {
           }
 
           // 转换为小写进行比较
-          var lowerCasePerson = person.toLowerCase();
+          var lowerCasePerson = person;
           var existingPerson = settingData.usertags.find(
-            (item) => item.name.toLowerCase() === lowerCasePerson
+            (item) => item.name === lowerCasePerson
           );
 
           if (existingPerson) {
@@ -140,36 +140,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less">
-.linxudoscripts-tag {
-  background: #29a6a9;
-  color: #fff;
-  font-size: 14px !important;
-  padding: 0 10px;
-  height: 26px;
-  text-align: center;
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-}
-
-.menu-table {
-  width: 100%;
-
-  td,
-  th {
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .span {
-    cursor: pointer;
-
-    & + .span {
-      margin-left: 10px;
-    }
-  }
-}
-</style>
